@@ -1,0 +1,248 @@
+:root{
+  --primary: #357C2E;
+  --primary-hover: rgb(33, 95, 38);
+  --bg:#f9f9f9;
+  --header-h: 6.7vh;
+}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html, body { height: 100%; font-size: 62.5%;}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+}
+
+/* -------------------------- Header -------------------------- */
+.petrobras-header{
+  position:fixed; 
+  width:100%; height: var(--header-h);
+  z-index:10;                
+  overflow:visible;
+  background: var(--bg);
+}
+
+/* ---------------------- SVG (cabeçalho) --------------------- */
+.header-bg{
+  position:absolute; 
+  inset:0;
+  width:100%; height:100%;
+  display:block;
+  z-index:1;
+}
+
+/* ------------------- conteúdo do cabeçalho ------------------ */
+.header-content{
+  position:relative; 
+  z-index:2;
+  height:var(--header-h);
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+  padding:0 1.5rem;
+}
+.logo{ margin-left: 1rem; height: 47%; object-fit:contain }
+
+/*-------------------------- menu oculto -----------------------*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* ---------------------- ícone clicavel ---------------------- */
+.profile-icon{
+  position:relative; 
+  right: 2.3rem; 
+  width: 3rem; height: 3rem; 
+  border-radius:50%;
+  background:white;
+  display:flex; 
+  align-items:center; justify-content:center;
+  box-shadow:0 0.1rem 0.2rem rgba(0, 0, 0, 0.18);
+  transition:transform .12s, box-shadow .12s, background-color .2s;
+}
+.profile-icon:hover{ transform:translateY(0.3px); box-shadow:0 0.2rem 0.5rem rgba(0,0,0,.22) }
+.profile-icon img{ width:1.3rem; height:1.3rem; display:block }
+
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 0.5vw);
+  right: 2.3rem;
+  background-color: #fff;
+  border: 0.1rem solid #B3B3B3;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.2);
+  width: 350%;
+  padding: 0.7rem 0.5rem;
+  display: none;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  padding: 0.7rem 0.7rem;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 0.1rem solid #B3B3B3;
+}
+
+.profile-btn {
+  width: 95%; height: 3.9vh;
+  background-color: #f0f0e0; 
+  border: none;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.2s ease;
+}
+.profile-btn:hover { background-color: #e4e4ce;}
+
+.profile-btn .icon { display: flex; align-items: center; gap: 0.8rem;}
+.profile-btn img { margin-left: 0.8rem; width: 13%;}
+
+.profile-menu.show { display: block;}
+
+.main-content{ 
+  padding-top:var(--header-h); 
+  z-index: 10;
+  background-color: #ffffff;
+  height: 91%;
+}
+
+/* --------------------- caminho / trilha -------------------- */
+.caminho{ padding:2.5rem 5rem; font-size: 1.6rem;}
+.caminho a{ color:#357C2E; text-decoration:none; margin-right: 1.5rem;}
+.caminho .pag{ color: #000000;  cursor: pointer;}
+.caminho span{ margin-right: 1.5rem;}
+
+/* ----------------------- layout principal ------------------ */
+.page{
+  display:grid; grid-template-columns: 1fr 1.4fr;
+  margin: 8rem 4rem 4rem 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ------------------- card à esquerda ----------------------- */
+.esquerda{ display:flex; flex-direction:column; align-items:center;}
+
+.avatar{
+  margin-top: 4rem;
+  width:20vw; height:20vw; border-radius:50%;
+  border: 0.1rem solid #000000; 
+  background:#ffffff; box-shadow:0 0.4rem 0.2rem rgba(0, 0, 0, 0.185);
+  display:grid; place-items:center; overflow:hidden;
+}
+.avatar img{ width:100%; height:100%; object-fit:cover; display:block }
+
+.btn{
+  display: flex;
+  justify-content: center;
+  border:none; cursor:pointer;
+  background: #3B8CBB; color: #ffffff;
+  border-radius:999rem;
+  font-size: 1.7rem; padding: 1rem 2.3rem;
+  box-shadow:0 0.3rem 0.3rem rgba(0, 0, 0, 0.192); 
+  transition: transform .04s ease;
+  margin: 4rem 0;
+}
+.btn img{
+  height: 1.8rem;
+  margin-right: 1.3rem;
+}
+.btn:hover{ background: #337aa3;}
+.btn:active{ transform:translateY(0.8px) }
+
+/* ---------------------------- forms ------------------------- */
+.form-direita {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-self: center;
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.linha-dupla {
+  display: flex;
+  gap: 2rem;
+}
+
+.grupo-form label {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #222222;
+}
+
+.grupo-form input,
+.grupo-form select,
+.grupo-form textarea {
+  height: 5rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #969696;
+  padding: 0 1rem;
+}
+
+.grupo-form textarea {
+  height: auto; 
+}
+
+/* ---------------------------- rodapé ----------------------- */
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 10rem;
+}
+
+.btn-rodape { background: var(--primary); margin: 0;}
+.btn-rodape1 { background: #DD4B39; margin: 0;}
+
+.btn-rodape:hover { background:var(--primary-hover)}
+.btn-rodape1:hover { background: #c44231}
+
+/* -------------------- decoração no fundo -------------------- */
+.linhas-fundo {
+  position: fixed;
+  right: 0;
+  bottom: 9%;
+  width: 16%; 
+  height: 62%;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 1;
+}
+.linhas-fundo svg { width: 100%; height: 100%;}
+
+
+
+
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+  .form-direita {
+    width: 100%;
+    height: 50vw;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    overflow-y: auto;
+  }
+  .linha-dupla {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .grupo-form input,
+  .grupo-form select,
+  .grupo-form textarea {
+    height: 4.5rem;
+  }
+  .grupo-form label {
+    font-size: 1.4rem; 
+  }
+}
+
+
