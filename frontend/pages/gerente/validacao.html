@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Validações</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/frontend/assets/css/testesGer.css">
+</head>
+
+<body>
+  <header class="petrobras-header">
+    <svg class="header-bg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="0" width="1000" height="1000" fill="#f9f9f9"/>
+      <polygon fill="#D9D319"points="87,00  900,00  900,36  280,36  125,35" /> <!--- faixa amarela --->
+      <polygon fill="#D9D319" points="850,10  970,97  1000,42  1000,0" /> <!--- “triângulo” amarelo da quina direita --->
+      <polygon fill="#357C2E" points="800,0   1000,0   1000,15  855,83" /> <!--- triângulo verde, por cima do amarelo --->
+    </svg>
+
+    <!--- conteúdo do cabeçalho --->
+    <div class="header-content">
+      <img src="/frontend/assets/img/Petrobras_horizontal_logo.svg.png" alt="Petrobras" class="logo" /> <!--- logo --->
+      
+      <div class="dropdown"> <!--- ícone perfil + menu oculto --->
+        <a class="profile-icon" title="Perfil do usuário" id="profileIcon" ><img id="profileIcon" src="/frontend/assets/img/user (1).svg" alt="ìcone do usuário"></a>
+        <div class="profile-menu" id="profileMenu">
+            <p class="profile-name">Fulano</p>
+            <button class="profile-btn">
+              <span onclick="window.location.href='perfil.html'" class="icon"><img src="/frontend/assets/img/user green.png"> Perfil</span> 
+            </button>
+            <button class="profile-btn">
+              <span class="icon"><img src="/frontend/assets/img/exit green.png"> Sair </span>
+            </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </header>
+
+
+    <div class="main-content">
+        <!--- trilha/caminho --->
+        <div class="caminho"> 
+            <a href="./home.html">Página inicial</a>
+            <span>></span>
+            <span id="caminho">Ocorrências do dia</span>
+            <span>></span>
+            <span>Validações</span>
+        </div>
+
+        <main class="page">
+          <div class="relatorio-container">
+              <header class="relatorio-titulo">
+                  <p>Ocorrências Registradas</p>
+              </header>
+
+              <!-- Cartão principal -->
+              <div class="relatorio-card">
+                <!-- Barra de busca -->
+                <div class="busca">
+                    <input type="text" placeholder="Buscar" aria-label="Buscar por plataforma e data"/> 
+                </div>
+
+                <div class="tabela-container">
+                  <table class="tabela-relatorios">
+                    <thead>
+                      <tr>
+                        <th>Nome Completo</th>
+                        <th>Tipo de Relatório</th>
+                        <th>Plataforma</th>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Situação</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id="lista-relatorios">
+
+                      <tr class="linha-principal">
+                        <td class="col-nome">fulaninho de tal</td>
+                        <td class="col-tipo">Queima irregular</td>
+                        <td class="col-plataforma">Jubarte</td>
+                        <td class="col-data">19/09/2025</td>
+                        <td class="col-horario">23:04:05</td>
+                        <td class=" col-situacao"><span class="status aguardando toggle-details">Aguardando Confirmação</span></td>
+                      </tr>
+
+                      <!-- Linha de Detalhes (fica escondida) -->
+                      <tr class="linha-detalhes">
+                        <td colspan="6">
+                        <div class="detalhes-wrapper">
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Volume da queima:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Categoria da queima:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Data/hora início:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Data/hora término:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha campo-longo">
+                            <label>Descrição:</label>
+                            <textarea></textarea>
+                          </div>
+
+                          <div class="linha campo campo-confirmacao">
+                            <label>Confirmação e Assinatura:</label>
+                            <span></span>
+                          </div>
+                        </div>
+                        </td>
+                      </tr>
+
+                      <tr class="linha-principal">
+                        <td class="col-nome">fulaninho de tal</td>
+                        <td class="col-tipo">Queima rotineira</td>
+                        <td class="col-plataforma">Tartaruga</td>
+                        <td class="col-data">19/09/2025</td>
+                        <td class="col-horario">22:16:49</td>
+                        <td class="col-situacao"><span class="status aguardando toggle-details">Aguardando Confirmação</span></td>
+                      </tr>
+                      
+                      <!-- Linha de Detalhes (fica escondida) -->
+                      <tr class="linha-detalhes">
+                        <td colspan="6">
+                        <div class="detalhes-wrapper">
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Volume da queima:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Categoria da queima:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Data/hora início:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Data/hora término:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha campo-longo">
+                            <label>Descrição:</label>
+                            <textarea></textarea>
+                          </div>
+
+                          <div class="linha campo campo-confirmacao">
+                            <label>Confirmação e Assinatura:</label>
+                            <span></span>
+                          </div>
+                        </div>
+                        </td>
+                      </tr>
+
+                      <tr class="linha-principal">
+                        <td class="col-nome">fulaninho de tal</td>
+                        <td class="col-tipo">Queima operacional</td>
+                        <td class="col-plataforma">Água-viva</td>
+                        <td class="col-data">18/09/2025</td>
+                        <td class="col-horario">04:48:12</td>
+                        <td class="col-situacao"><span class="status aprovado toggle-details">Aprovado</span></td>
+                      </tr>
+                      
+                      <!-- Linha de Detalhes (fica escondida) -->
+                      <tr class="linha-detalhes">
+                        <td colspan="6">
+                        <div class="detalhes-wrapper">
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Volume da queima:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Categoria da queima:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Data/hora início:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Data/hora término:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha campo-longo">
+                            <label>Descrição:</label>
+                            <textarea></textarea>
+                          </div>
+
+                          <div class="linha campo campo-confirmacao">
+                            <label>Confirmação e Assinatura:</label>
+                            <span></span>
+                          </div>
+                        </div>
+                        </td>
+                      </tr>
+
+                      <tr class="linha-principal">
+                        <td class="col-nome">fulaninho de tal</td>
+                        <td class="col-tipo">Queima emergencial</td>
+                        <td class="col-plataforma">Golfinho</td>
+                        <td class="col-data">18/09/2025</td>
+                        <td class="col-horario">15:21:57</td>
+                        <td class="col-situacao"><span class="status aprovado toggle-details">Aprovado</span></td>
+                      </tr>
+                      
+                      <!-- Linha de Detalhes (fica escondida) -->
+                      <tr class="linha-detalhes">
+                        <td colspan="6">
+                        <div class="detalhes-wrapper">
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Volume da queima:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Categoria da queima:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Data/hora início:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Data/hora término:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha campo-longo">
+                            <label>Descrição:</label>
+                            <textarea></textarea>
+                          </div>
+
+                          <div class="linha campo campo-confirmacao">
+                            <label>Confirmação e Assinatura:</label>
+                            <span></span>
+                          </div>
+                        </div>
+                        </td>
+                      </tr>
+
+                      <tr class="linha-principal">
+                        <td class="col-nome">fulaninho de tal</td>
+                        <td class="col-tipo">Queima operacional</td>
+                        <td class="col-plataforma">Tubarão</td>
+                        <td class="col-data">18/09/2025</td>
+                        <td class="col-horario">16:52:36</td>
+                        <td class="col-situacao"><span class="status aprovado toggle-details">Aprovado</span></td>
+                      </tr>
+                      
+                      <!-- Linha de Detalhes (fica escondida) -->
+                      <tr class="linha-detalhes">
+                        <td colspan="6">
+                        <div class="detalhes-wrapper">
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Volume da queima:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Categoria da queima:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha">
+                            <div class="campo">
+                              <label>Data/hora início:</label>
+                              <span></span>
+                            </div>
+
+                            <div class="campo">
+                              <label>Data/hora término:</label>
+                              <span></span>
+                            </div>
+                          </div>
+
+                          <div class="linha campo-longo">
+                            <label>Descrição:</label>
+                            <textarea></textarea>
+                          </div>
+
+                          <div class="linha campo campo-confirmacao">
+                            <label>Confirmação e Assinatura:</label>
+                            <span></span>
+                          </div>
+                        </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="fundo-rodape">
+                <div class="rodape rodape-paginacao">
+                  <button class="btn-nav">Anterior</button>
+                  <span class="pagina-atual">1</span>
+                  <button class="btn-nav">Próximo</button>
+                </div>
+
+                <div class="rodape2 rodape-voltar"> 
+                  <a class="link-voltar"> 
+                    <img src="/frontend/assets/img/voltar.png"> Voltar 
+                  </a> 
+                </div>
+              </div>
+
+          </section>
+        </main>
+    </div>
+
+
+
+  <script src="/frontend/assets/js/testes.js"></script>
+</body>
+
+</html>

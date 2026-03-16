@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Área interna</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/frontend/assets/css/gerente.css">
+</head>
+
+<body>
+  <header class="petrobras-header">
+    <svg class="header-bg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="0" width="1000" height="1000" fill="#f9f9f9"/>
+      <polygon fill="#D9D319"points="87,00  900,00  900,36  280,36  125,35" /> <!--- faixa amarela --->
+      <polygon fill="#D9D319" points="850,10  970,97  1000,42  1000,0" /> <!--- “triângulo” amarelo da quina direita --->
+      <polygon fill="#357C2E" points="800,0   1000,0   1000,15  855,83" /> <!--- triângulo verde, por cima do amarelo --->
+    </svg>
+
+    <!--- conteúdo do cabeçalho --->
+    <div class="header-content">
+      <img src="/frontend/assets/img/Petrobras_horizontal_logo.svg.png" alt="Petrobras" class="logo" /> <!--- logo --->
+      
+      <div class="dropdown"> <!--- ícone perfil + menu oculto --->
+        <a class="profile-icon" title="Perfil do usuário" id="profileIcon" ><img id="profileIcon" src="/frontend/assets/img/user (1).svg" alt="ìcone do usuário"></a>
+        <div class="profile-menu" id="profileMenu">
+            <p class="profile-name">Fulano</p>
+            <button class="profile-btn">
+              <span onclick="window.location.href='perfil.html'" class="icon"><img src="/frontend/assets/img/user green.png"> Perfil</span> 
+            </button>
+            <button class="profile-btn">
+              <span class="icon"><img src="/frontend/assets/img/exit green.png"> Sair </span>
+            </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </header>
+
+
+    <div class="main-content">
+        <!--- trilha/caminho --->
+        <div class="caminho"> 
+            <a href="./home.html">Página inicial</a>
+            <span>></span>
+            <span id="caminho">Área interna</span>
+        </div>
+
+        <main class="page page-adm">
+
+           <section class="relatorio-container">
+              <header class="relatorio-titulo">
+                  <p>Pessoas Cadastradas</p>
+              </header>
+
+              <!-- Cartão principal -->
+              <div class="relatorio-card">
+                <div class="busca">
+                    <input type="text" placeholder="Buscar" aria-label="Buscar por plataforma e data"/> 
+                </div>
+
+                <div class="tabela-container">
+
+                  <table class="tabela-relatorios cadastros">
+                    <thead>
+                      <tr>
+                        <th>Nome Completo</th>
+                        <th>E-mail</th>
+                        <th>Permissão</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="col-nome ">Simone Barcellos</td>
+                            <td class="col-tipo email">simone.barcellos@gmail.com</td>
+                            <td class="col-plataforma ">Gerente</td>
+                            <td class="col-situacao "><a href="./editUsuario.html" class="status editar">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-nome">Paulo Henrique Basto</td>
+                            <td class="col-tipo email">paulobastos.henrique@gmail.com</td>
+                            <td class="col-plataforma">Analista</td>
+                            <td class="col-situacao "><a href="./editUsuario.html" class="status editar">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-nome ">Diego Carvalho Oliveira</td>
+                            <td class="col-tipo email">diegocarvalhooliveira.dd@gmail.com</td>
+                            <td class="col-plataforma ">Analista</td>
+                            <td class="col-situacao "><a href="./editUsuario.html" class="status editar">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-nome ">Juliana Ribeiro Couto</td>
+                            <td class="col-tipo email">julianacouto_ribeiro1993@gmail.com</td>
+                            <td class="col-plataforma ">Analista</td>
+                            <td class="col-situacao "><a href="./editUsuario.html" class="status editar">Editar</a></td>
+                        </tr>
+                        <tr>
+                            <td class="col-nome ">Lucas Matos Ferreira</td>
+                            <td class="col-tipo email">lucas00matosferreira@gmail.com</td>
+                            <td class="col-plataforma ">Analista</td>
+                            <td class="col-situacao "><a href="./editUsuario.html" class="status editar">Editar</a></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              
+              <div class="fundo-rodape">
+                <div class="rodape rodape-adm">
+                  <button class="btn-nav">Anterior</button>
+                  <span class="pagina-atual">1</span>
+                  <button class="btn-nav">Próximo</button>
+                </div>
+                <div class="add">
+                    <button onclick="window.location.href='addUsuario.html'" class="btn-add"> + </button>
+                </div>
+              </div>
+            </section>
+
+
+
+            <section class="relatorio-container">
+              <header class="relatorio-titulo">
+                  <p>Plataformas Cadastradas</p>
+              </header>
+
+              <!-- Cartão principal -->
+              <div class="relatorio-card">
+                <!-- Barra de busca -->
+                <div class="busca">
+                    <input type="text" placeholder="Buscar" aria-label="Buscar por plataforma e data"/> 
+                </div>
+
+                <div class="tabela-container">
+
+                  <table class="tabela-relatorios cadastros">
+                    <thead>
+                      <tr>
+                        <th>Código da plataforma</th>
+                        <th>Nome</th>
+                        <th>Localidade</th>
+                        <th>Responsável</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="col-nome">0001</td>
+                        <td class="col-tipo">Tartaruga</td>
+                        <td class="col-plataforma">Goiânia — GO, 74085-730</td>
+                        <td class="col-data">Adriano Pacheco</td>
+                        <td class="col-situacao"><a href="./editPlat.html" class="status editar">Editar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-nome">0002</td>
+                        <td class="col-tipo">Golfinho</td>
+                        <td class="col-plataforma">Florianópolis — SC, 88035-210</td>
+                        <td class="col-data">Rogério Carvalho Zettogli</td>
+                        <td class="col-situacao"><a href="./editPlat.html" class="status editar">Editar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-nome">0003</td>
+                        <td class="col-tipo">Jubarte</td>
+                        <td class="col-data">São Paulo — SP, 04468-900</td>
+                        <td class="col-horario">Simone Barcellos</td>
+                        <td class="col-situacao"><a href="./editPlat.html" class="status editar">Editar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-nome">0004</td>
+                        <td class="col-tipo">Água-viva</td>
+                        <td class="col-plataforma">Curitiba — PR, 82530-450</td>
+                        <td class="col-horario">Malu Rodrigues</td>
+                        <td class="col-situacao"><a href="./editPlat.html" class="status editar">Editar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-nome">0005</td>
+                        <td class="col-tipo">Tubarão</td>
+                        <td class="col-plataforma">Manaus — AM, 69078-190</td>
+                        <td class="col-horario">Daniela Chaves</td>
+                        <td class="col-situacao"><a href="./editPlat.html" class="status editar">Editar</a></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              
+              <div class="fundo-rodape">
+                <div class="rodape rodape-adm">
+                  <button class="btn-nav">Anterior</button>
+                  <span class="pagina-atual">1</span>
+                  <button class="btn-nav">Próximo</button>
+                </div>
+                <div class="add">
+                    <button onclick="window.location.href='addPlat.html'" class="btn-add"> + </button>
+                </div>
+              </div>
+
+            </section>
+        </main>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!--- script do menu ---> 
+  <script>
+    const profileIcon = document.getElementById('profileIcon');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileIcon.addEventListener('click', function() {
+      profileMenu.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('#profileIcon') && !event.target.closest('.profile-menu')) {
+        if (profileMenu.classList.contains('show')) {
+          profileMenu.classList.remove('show');
+        }
+      }
+    }
+  </script>
+  <script src="/frontend/assets/js/home.js"></script>
+</body>
+
+</html>

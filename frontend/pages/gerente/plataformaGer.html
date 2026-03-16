@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tela Plataforma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/frontend/assets/css/plataforma.css">
+</head>
+
+<body>
+  <header class="petrobras-header">
+    <svg class="header-bg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="0" width="1000" height="1000" fill="#f9f9f9"/>
+      <polygon fill="#D9D319"points="87,00  900,00  900,36  280,36  125,35" /> <!--- faixa amarela --->
+      <polygon fill="#D9D319" points="850,10  970,97  1000,42  1000,0" /> <!--- “triângulo” amarelo da quina direita --->
+      <polygon fill="#357C2E" points="800,0   1000,0   1000,15  855,83" /> <!--- triângulo verde, por cima do amarelo --->
+    </svg>
+
+    <!--- conteúdo do cabeçalho --->
+    <div class="header-content">
+      <img src="/frontend/assets/img/Petrobras_horizontal_logo.svg.png" alt="Petrobras" class="logo" /> <!--- logo --->
+      
+      <div class="dropdown"> <!--- ícone perfil + menu oculto --->
+        <a class="profile-icon" title="Perfil do usuário" id="profileIcon" ><img id="profileIcon" src="/frontend/assets/img/user (1).svg" alt="ìcone do usuário"></a>
+        <div class="profile-menu" id="profileMenu">
+            <p class="profile-name">Fulano</p>
+            <button class="profile-btn">
+              <span onclick="window.location.href='perfil.html'" class="icon"><img src="/frontend/assets/img/user green.png"> Perfil</span> 
+            </button>
+            <button class="profile-btn">
+              <span class="icon"><img src="/frontend/assets/img/exit green.png"> Sair </span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--- banner com sua imagem --->
+  <section class="hero">
+    <img class="hero-img" src="/frontend/assets/img/navio.jpeg" alt="Navio plataforma Petrobras" />
+
+    <!--- relógio --->
+    <div class="overlay">
+      <div class="clock">
+        <div id="dateStr">dia-semana, dd/MM/yyyy</div>
+        <div id="timeStr" class="time">hh:mm:ss</div>
+      </div>
+    </div>
+  </section>
+
+  <!--- plataformas --->
+  <div class="plataformas">
+    <div class="plat">
+       <img class="ico" src="/frontend/assets/img/tartaruga.png">
+       <div class="plat-name">Tartaruga</div>
+    </div>
+    <div class="plat">
+       <img class="ico" src="/frontend/assets/img/golfinho.png">
+       <div class="plat-name">Golfinho</div>
+    </div>
+    <div class="plat">
+       <img class="ico" src="/frontend/assets/img/baleia.png">
+       <div class="plat-name">Jubarte</div>
+    </div>
+    <div class="plat">
+       <img class="ico" src="/frontend/assets/img/agua-viva.png">
+       <div class="plat-name">Agua-viva</div>
+    </div>
+    <div class="plat">
+       <img class="ico" src="/frontend/assets/img/tubarao.png">
+       <div class="plat-name">Tubarão</div>
+    </div>
+  </div>
+
+  <main class="grid">
+    <!--- Monitoramento --->
+    <section class="card">
+      <header class="titulo">
+        <p>Monitoramento de desempenho</p>
+      </header>
+      <div class="card-body">
+        <div class="grafico">
+          <canvas id="perfChart" aria-label="Gráfico de desempenho"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <!--- Volume da queima --->
+      <header class="titulo">
+        <p>Volume da queima</p>
+      </header>
+      <div class="card-body">
+        <div class="ocorrencias">
+          <div class="vazao">
+            <span id="burnVolume">0</span>
+            <span class="unit">/m³</span>
+          </div>
+        </div>
+      </div>
+      <!--- Ocorrências --->
+      <header class="titulo">
+        <p>Ocorrências da plataforma</p>
+      </header>
+      <div class="card-body">
+        <div class="ocorrencias">
+          <p>Nenhuma ocorrência registrada</p>
+          <button class="btn btnGer" id="newOcc">Validações</button>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!--- Linhas decorativas --->  
+  <div class="linhas-fundo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 500" preserveAspectRatio="none">
+      <!-- Linha verde -->
+      <polyline points="30,600 0,460 50,400 120,310 95,143 175,70 250,5" 
+        fill="none" stroke="#357C2E" stroke-width="1" />
+      <!-- Linha amarela -->
+      <polyline points="80,600 50,470 100,410 170,320 145,163 245,70 300,5" 
+        fill="none"  stroke="#FDB823" stroke-width="1.2" />
+    </svg>
+  </div>
+  <!--- mesmo padrão invertido no css ---> 
+  <div class="linhas-fundo-esquerda">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 500" preserveAspectRatio="none">
+      <polyline points="30,600 0,460 50,400 120,310 95,143 175,70 250,5" 
+        fill="none" stroke="#357C2E" stroke-width="1" />
+      <polyline points="80,600 50,470 100,410 170,320 145,163 245,70 300,5" 
+        fill="none"  stroke="#FDB823" stroke-width="1.2" />
+    </svg>
+  </div>
+
+
+
+
+
+
+
+
+  
+  <!--- script do menu ---> 
+  <script>
+    const profileIcon = document.getElementById('profileIcon');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileIcon.addEventListener('click', function() {
+      profileMenu.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('#profileIcon') && !event.target.closest('.profile-menu')) {
+        if (profileMenu.classList.contains('show')) {
+          profileMenu.classList.remove('show');
+        }
+      }
+    }
+  </script>
+
+  <!--- script de baixar a plataforma --->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const selected = params.get("p"); // o que veio de ?p=...
+
+      if (!selected) return;
+
+      document.querySelectorAll(".plat").forEach((btn) => {
+        const nameSpan = btn.querySelector("span:last-child");
+        const name = (nameSpan ? nameSpan.textContent : btn.textContent).trim();
+
+        if (name === selected) {
+          btn.classList.add("active"); // desce só essa
+        }
+      });
+    });
+  </script>
+  <script src="../assets/js/platform.js"></script>
+</body>
+</html>

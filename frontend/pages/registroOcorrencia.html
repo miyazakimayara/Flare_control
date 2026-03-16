@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Registro de ocorrência</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/registro.css">
+<body>
+  
+    <!-- header -->
+    <header class="petrobras-header">
+        <svg class="header-bg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="0" y="0" width="1000" height="1000" fill="#f9f9f9"/>
+        <polygon fill="#D9D319"points="87,00  900,00  900,36  280,36  125,35" /> <!--- faixa amarela --->
+        <polygon fill="#D9D319" points="850,10  970,97  1000,42  1000,0" /> <!--- “triângulo” amarelo da quina direita --->
+        <polygon fill="#357C2E" points="800,0   1000,0   1000,15  855,83" /> <!--- triângulo verde, por cima do amarelo --->
+        </svg>
+
+        <!--- conteúdo do cabeçalho --->
+        <div class="header-content">
+        <img src="../assets/img/Petrobras_horizontal_logo.svg.png" alt="Petrobras" class="logo" /> <!--- logo --->
+        
+        <div class="dropdown"> <!--- ícone perfil + menu oculto --->
+            <a class="profile-icon" title="Perfil do usuário" id="profileIcon" ><img id="profileIcon" src="../assets/img/user (1).svg" alt="ìcone do usuário"></a>
+            <div class="profile-menu" id="profileMenu">
+                <p class="profile-name">Fulano</p>
+                <button class="profile-btn">
+                <span onclick="window.location.href='perfil.html'" class="icon"><img src="../assets/img/user green.png"> Perfil</span> 
+                </button>
+                <button class="profile-btn">
+                <span class="icon"><img src="../assets/img/exit green.png"> Sair </span>
+                </button>
+            </div>
+        </div>
+        </div>
+        <hr>
+    </header>
+  
+
+    <div class="main-content">
+        <!--- trilha/caminho --->
+        <div class="caminho"> 
+            <a href="./home.html">Página inicial</a>
+            <span>></span>
+            <span id="caminho">Registrar Ocorrência</span>
+        </div>
+
+        <main class="page">
+          <section class="relatorio-container">
+            <!-- Barra verde com título -->
+            <header class="relatorio-titulo">
+              <p>Registrar Ocorrência</p>
+            </header>
+
+            <div class="relatorio-card">
+
+                <form class="form-ocorrencia">
+                    <div class="grupo">
+                        <label class="identificador" for="plataforma">Código da plataforma</label>
+                        <input class="input" type="text" id="plataforma" placeholder="Identificação das plataformas.">
+                    </div>
+
+                    <div class="grupo">
+                        <label class="identificador" for="classificacao">Classificação da queima</label>
+                        <select class="input" id="classificacao">
+                          <option value="">Selecione</option>
+                          <option value="rotineira"> Queima rotineira</option>
+                          <option value="emergencial">Queima emergencial</option>
+                          <option value="irregular">Queima irregular</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo">
+                        <label class="identificador" for="volume">Volume da queima classificada</label>
+                        <input class="input" type="number" id="volume" placeholder="Medida em m³">
+                    </div>
+
+                    <div class="grupo-longo">
+                        <label class="identificador" for="descricao">Descrição</label>
+                        <input class="input" type="text" id="descricao">
+                    </div>
+
+                    <div class="grupo-data">
+                        <label class="identificador" for="inicio">Data/hora do início</label>
+                        <input class="input" type="datetime-local" id="inicio">
+                    </div>
+
+                    <div class="grupo-data">
+                        <label class="identificador" for="fim">Data/hora do término</label>
+                        <input class="input" type="datetime-local" id="fim">
+                    </div>
+
+                    <div class="button">
+                        <button type="reset" class="btn btn-delete"><img src="/frontend/assets/img/cross.png">Limpar</button>
+                        <button type="submit" class="btn btn-enviar">Enviar <img src="/frontend/assets/img/paper-plane.png"></button>
+                    </div>
+
+                </form>
+            </div>
+          </section>
+
+
+
+
+
+
+
+
+          <section class="relatorio-container">
+            <header class="relatorio-titulo relatorio-titulo-secundario">
+              <p>Relatórios Anteriores</p>
+            </header>
+            <div class="relatorio-card relatorio-card-secundario">
+              <div class="tabela-container">
+                <table class="tabela-relatorios">
+                        <thead>
+                            <tr>
+                                <th>Nome Completo</th>
+                                <th>Gerente responsável</th>
+                                <th>Tipo de relatório</th>
+                                <th>Plataforma</th>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Bianca Alves Ferreira</td>
+                                <td>Simone Barcellos</td>
+                                <td>Queima rotineira</td>
+                                <td>Jubarte</td>
+                                <td>14/04/2025</td>
+                                <td>19:25:34</td>
+                                <td>Aguardando confirmação</td>
+                            </tr>
+                            <tr>
+                                <td>Lucas Matos Ferreira</td>
+                                <td>Simone Barcellos</td>
+                                <td>Queima rotineira</td>
+                                <td>Jubarte</td>
+                                <td>14/04/2025</td>
+                                <td>11:37:53</td>
+                                <td>Aprovado</td>
+                            </tr>
+                            <tr>
+                                <td>Juliana Ribeiro Couto</td>
+                                <td>Simone Barcellos</td>
+                                <td>Queima irregular</td>
+                                <td>Jubarte</td>
+                                <td>14/04/2025</td>
+                                <td>04:37:12</td>
+                                <td>Aprovado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+          </section>
+        </main>
+    </div>
+
+
+
+  <script>
+    const profileIcon = document.getElementById('profileIcon');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileIcon.addEventListener('click', function() {
+      profileMenu.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('#profileIcon') && !event.target.closest('.profile-menu')) {
+        if (profileMenu.classList.contains('show')) {
+          profileMenu.classList.remove('show');
+        }
+      }
+    }
+  </script>
+  <script src="../assets/js/perfil.js"></script>
+</body>
+</html>

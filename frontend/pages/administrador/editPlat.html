@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Plataforma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/frontend/assets/css/adm.css">
+</head>
+<body>
+  
+  <!-- header -->
+  <header class="petrobras-header">
+    <svg class="header-bg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="0" width="1000" height="1000" fill="#f9f9f9"/>
+      <polygon fill="#D9D319"points="87,00  900,00  900,36  280,36  125,35" /> <!--- faixa amarela --->
+      <polygon fill="#D9D319" points="850,10  970,97  1000,42  1000,0" /> <!--- “triângulo” amarelo da quina direita --->
+      <polygon fill="#357C2E" points="800,0   1000,0   1000,15  855,83" /> <!--- triângulo verde, por cima do amarelo --->
+    </svg>
+
+    <!--- conteúdo do cabeçalho --->
+    <div class="header-content">
+      <img src="/frontend/assets/img/Petrobras_horizontal_logo.svg.png" alt="Petrobras" class="logo" /> <!--- logo --->
+      
+      <div class="dropdown"> <!--- ícone perfil + menu oculto --->
+        <a class="profile-icon" title="Perfil do usuário" id="profileIcon" ><img id="profileIcon" src="/frontend/assets/img/user (1).svg" alt="ìcone do usuário"></a>
+        <div class="profile-menu" id="profileMenu">
+            <p class="profile-name">Fulano</p>
+            <button class="profile-btn">
+              <span onclick="window.location.href='perfil.html'" class="icon"><img src="/frontend/assets/img/user green.png"> Perfil</span> 
+            </button>
+            <button class="profile-btn">
+              <span class="icon"><img src="/frontend/assets/img/exit green.png"> Sair </span>
+            </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </header>
+  
+  <div class="main-content">
+    <div class="caminho"> <!--- trilha/caminho --->
+      <a href="./homeAdm.html">Página inicial</a>
+      <span>></span>
+      <a class="pag" href="./areaInterna.html">Área interna</a>
+      <span>></span>
+      <span id="caminho">Editar plataforma</span>
+    </div>
+
+    <main class="page">
+      <!-- coluna esquerda: avatar -->
+      <section class="esquerda">
+        <div class="avatar">
+          <img id="avatarPreview" />
+        </div>
+
+        <input id="avatarInput" type="file" accept="image/*" hidden />
+        <button id="btnUpload" class="btn">
+            <img src="/frontend/assets/img/download.png"> Escolher Arquivo
+        </button>
+      </section>
+
+      <!-- coluna direita: dados -->
+      <div class="form-direita">
+        <div class="grupo-form">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="">
+        </div>
+        <div class="grupo-form">
+            <label for="codigoPlataforma">Código da plataforma</label>
+            <input type="text" id="codigoPlataforma" placeholder="">
+        </div>
+        <div class="grupo-form">
+            <label for="uf">UF</label>
+            <select id="uf">
+            <option value="">Selecione</option>
+            </select>
+        </div>
+        <div class="grupo-form">
+            <label for="cidade">Cidade</label>
+            <select id="cidade">
+            <option value="">Selecione</option>
+            </select>
+        </div>
+        <div class="grupo-form">
+            <label for="infoExtra">Informações Adicionais</label>
+            <textarea id="infoExtra" rows="5" placeholder=""></textarea>
+        </div>
+     </div>
+     
+    </main>
+  </div>
+  <hr>
+
+  <div class="rodape">
+    <button href="home.html" class="btn btn-rodape1">
+        <img src="/frontend/assets/img/trash.png">  Limpar
+    </button>
+    <button class="btn btn-rodape"> 
+        <img src="/frontend/assets/img/plus.png"> Editar 
+    </button>
+  </div>
+
+
+  <div class="linhas-fundo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 500" preserveAspectRatio="none">
+    <polyline points="30,600 0,460 50,400 120,310 95,143 175,70 250,5" 
+      fill="none" stroke="#357C2E" stroke-width="1" />
+    <polyline points="80,600 50,470 100,410 170,320 145,163 245,70 300,5" 
+      fill="none"  stroke="#FDB823" stroke-width="1.2" />
+  </svg>
+  </div>
+
+
+
+
+
+
+  <script>
+    const profileIcon = document.getElementById('profileIcon');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileIcon.addEventListener('click', function() {
+      profileMenu.classList.toggle('show');
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('#profileIcon') && !event.target.closest('.profile-menu')) {
+        if (profileMenu.classList.contains('show')) {
+          profileMenu.classList.remove('show');
+        }
+      }
+    }
+  </script>
+  <script src="../assets/js/perfil.js"></script>
+</body>
+</html>
