@@ -1,0 +1,390 @@
+:root{
+  --primary: #357C2E;
+  --primary-hover: rgb(33, 95, 38);
+  --bg:#f9f9f9;
+  --header-h: 6.7vh;
+}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html, body { height: 100%; font-size: 62.5%;}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+}
+
+/* -------------------------- Header -------------------------- */
+.petrobras-header{
+  position:fixed; 
+  width:100%; height: var(--header-h);
+  z-index:10;                
+  overflow:visible;
+  background: var(--bg);
+}
+
+/* ---------------------- SVG (cabeçalho) --------------------- */
+.header-bg{
+  position:absolute; 
+  inset:0;
+  width:100%; height:100%;
+  display:block;
+  z-index:1;
+}
+
+/* ------------------- conteúdo do cabeçalho ------------------ */
+.header-content{
+  position:relative; 
+  z-index:2;
+  height:var(--header-h);
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+  padding:0 1.5rem;
+}
+.logo{ margin-left: 1rem; height: 47%; object-fit:contain }
+
+/*-------------------------- menu oculto -----------------------*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* ---------------------- ícone clicavel ---------------------- */
+.profile-icon{
+  position:relative; 
+  right: 2.3rem; 
+  width: 3rem; height: 3rem; 
+  border-radius:50%;
+  background:white;
+  display:flex; 
+  align-items:center; justify-content:center;
+  box-shadow:0 0.1rem 0.2rem rgba(0, 0, 0, 0.18);
+  transition:transform .12s, box-shadow .12s, background-color .2s;
+}
+.profile-icon:hover{ transform:translateY(0.3px); box-shadow:0 0.2rem 0.5rem rgba(0,0,0,.22) }
+.profile-icon img{ width:1.3rem; height:1.3rem; display:block }
+
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 0.5vw);
+  right: 2.3rem;
+  background-color: #fff;
+  border: 0.1rem solid #B3B3B3;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.2);
+  width: 350%;
+  padding: 0.7rem 0.5rem;
+  display: none;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  padding: 0.7rem 0.7rem;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 0.1rem solid #B3B3B3;
+}
+
+.profile-btn {
+  width: 95%; height: 3.9vh;
+  background-color: #f0f0e0; 
+  border: none;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background-color 0.2s ease;
+}
+.profile-btn:hover { background-color: #e4e4ce;}
+
+.profile-btn .icon { display: flex; align-items: center; gap: 0.8rem;}
+.profile-btn img { margin-left: 0.8rem; width: 13%;}
+
+.profile-menu.show { display: block;}
+
+.main-content{ padding-top:var(--header-h);}
+
+/* --------------------- caminho / trilha -------------------- */
+.caminho{ padding:2.5rem 5rem; font-size: 1.6rem;}
+.caminho a{ color:#357C2E; text-decoration:none; margin-right: 1.5rem;}
+.caminho span{ margin-right: 1.5rem;}
+
+/* ----------------------- layout principal ------------------ */
+.page{position: relative; z-index: 5;  padding: 2rem 1.5rem;}
+
+/* ---------------------- container central ------------------ */
+.relatorio-container {
+  max-width: 95%;
+  margin: 0 auto;
+  min-width: 0; /*área interna*/
+}
+
+/* ------------------- barra verde com título ---------------- */
+.relatorio-titulo {
+  position: relative;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 1.4rem 4.5rem;
+  border-radius: 0.2rem 0.2rem 0 0;
+  box-shadow: 0 0.2rem 0.3rem rgba(121, 121, 121, 0.719);
+  z-index: 10;
+}
+.relatorio-titulo p { font-size: 2.1rem;}
+
+/* -------------------- cartão principal -------------------- */
+.relatorio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  height: 58vh;
+  background: #ffffff;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.171);
+  padding: 3rem 3.2rem;
+}
+
+/* ------------------------- busca ------------------------- */
+.busca {
+  margin-bottom: 2rem;
+  border-radius: 999px;
+  padding: 1.2rem 3rem;
+  box-shadow: 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.171);
+  background-color: #EFEFEF;
+}
+
+.busca input {
+  background-color: #EFEFEF;
+  border: none; outline: none;
+  width: 100%; font-size: 1.5rem;
+  background-image: url('/frontend/assets/img/search.png');
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  background-size: 1.4rem;
+  padding-left: 4rem;
+}
+
+/* ------------------------ Tabela ------------------------- */
+.tabela-container {
+  width: 99%;
+  margin: 1rem;
+  overflow-y: auto;
+  box-shadow: 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.171);
+}
+
+.tabela-relatorios {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela-relatorios thead tr {
+  background: #F4F4F4;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.205);
+  height: 8.5rem;
+}
+
+.tabela-relatorios th {
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.tabela-relatorios td {
+  padding: 1.7rem;
+  font-size: 1.4rem;
+  color: #827E7E;
+}
+
+.tabela-relatorios th,
+.tabela-relatorios td {
+  min-width: 20rem;
+}
+
+.status {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.status.aguardando { background: #d9534f;}
+
+.status.aprovado,
+.status.editar{
+  background:#357C2E;
+}
+.status.editar { 
+  text-decoration: none;
+  background-image: url('/frontend/assets/img/pencil.png');
+  background-repeat: no-repeat;
+  background-position: 20% center;
+  background-size: 1.5rem;
+}
+
+.col-tipo,
+.col-plataforma,
+.col-data,
+.col-horario,
+.col-situacao {
+  border-left: 0.2rem solid #e0e0e0;
+}
+.col-nome{
+  border-left: 0.1rem solid #e0e0e0;
+}
+
+/* -------------------- Rodapé cinza ------------------------ */
+.fundo-rodape{
+  display: flex;
+  background: #ECECEC;
+  height: 66vh;
+  margin-top: -58vh;
+  box-shadow: 0.1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.171);
+}
+
+/* ------------------ trocar de página --------------------- */
+.rodape-paginacao {
+  display: flex;
+  align-items: center;
+  gap: 0.16rem;
+}
+
+.rodape {
+  margin: auto 0 0 auto;
+  padding: 1.1rem 5rem;
+}
+
+.btn-nav {
+  background: #cfcfcf;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0.2rem 0.2rem rgba(0,0,0,0.2);
+  transition: background 0.2s ease;
+}
+.btn-nav:hover { background: #bebebe;}
+
+.pagina-atual {
+  background: #6179d3;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.2);
+}
+
+
+/* ----------------------- rodapé 2 ---------------------- */
+.rodape2 {
+  margin: auto auto 0 0;
+  padding: 1.8rem;
+}
+
+.link-voltar {
+  text-decoration: none;  
+  color: inherit;
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.link-voltar img{
+  height: 1.2rem;
+  margin: 0.8rem;
+}
+
+
+/* ------------------- linha oculta  --------------------- */
+.linha-detalhes {
+  display: none;
+  border-left: 0.1rem solid #e0e0e0;
+  background: #fafafa;
+}
+
+.detalhes-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  column-gap: 5rem;
+  row-gap: 1.6rem;
+  padding: 2rem;
+}
+
+.campo, .campo-longo{ 
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.campo label,
+.campo-longo label,
+.campo-confirmacao label {
+  margin-bottom: 2rem;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.campo span {
+  border-bottom: 0.1rem solid #888888;
+  flex: 1;
+}
+
+.campo-longo {
+  grid-column: 1 / 3;
+  align-items: start;
+}
+
+textarea {
+  width: 100%;
+  min-height: 9.8rem;
+  border: 1px solid #888888;
+  resize: none;
+}
+
+.campo-confirmacao {
+  grid-column: 3/3;
+  margin-top: auto;
+  gap: 2rem;
+}
+
+/* Apenas a coluna do botão: quando ativa */
+.linha-principal.linha-ativa td.col-situacao {
+  background: #fafafa !important;
+  border-radius: 2rem 2rem 0 0;
+}
+
+
+/* -------------------- funcionamento com js ------------------------*/
+/* Quando detalhe está ativo → esconder todas */
+tbody.detalhe-ativo tr {
+  display: none;
+}
+/* Mas a linha ativa e seus detalhes devem aparecer */
+tbody.detalhe-ativo .linha-ativa,
+tbody.detalhe-ativo .linha-ativa + .linha-detalhes {
+  display: table-row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+  .page-adm {
+    grid-template-columns: 1fr;
+  }
+  .relatorio-container{
+    margin-bottom: 3rem;
+  }
+}
